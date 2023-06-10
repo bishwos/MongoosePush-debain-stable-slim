@@ -45,7 +45,7 @@ ENV LC_ALL en_US.UTF-8
 # required packages
 RUN apt-get update 
 RUN apt-get upgrade -y
-RUN apt-get install --no-install-recommends -y \
+RUN apt-get install -y \
     bash \
     bash-completion \
     curl \

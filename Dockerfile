@@ -43,7 +43,7 @@ ENV LANGUAGE en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 # required packages
-RUN apt-get update && apt-get install -y \
+RUN apt-get -u update && apt-get install -y \
     bash \
     bash-completion \
     curl \

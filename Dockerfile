@@ -30,7 +30,7 @@ RUN mix do certs.dev, release
 RUN tar -czf mongoose_push.tar.gz -C _build/prod/rel/mongoose_push .
 
 
-FROM ubuntu:mantic-20230520
+FROM ubuntu:focal-20230412
 
 # set locales
 RUN apt-get update && apt-get install --no-install-recommends -y locales

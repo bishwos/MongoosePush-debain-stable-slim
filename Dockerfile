@@ -43,15 +43,17 @@ ENV LANGUAGE en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 # required packages
-RUN apt-get update && apt-get upgrade -y && apt-get install --no-install-recommends -y \
+RUN apt-get update 
+RUN apt-get upgrade -y
+RUN apt-get install --no-install-recommends -y \
     bash \
     bash-completion \
     curl \
     dnsutils \
     libtinfo5 \
     libssl1.1 \
-    vim && \
-    apt-get clean
+    vim
+RUN apt-get clean
 
 EXPOSE 8443
 ENV PUSH_HTTPS_BIND_ADDR=0.0.0.0 PUSH_HTTPS_PORT=8443 MIX_ENV=prod \

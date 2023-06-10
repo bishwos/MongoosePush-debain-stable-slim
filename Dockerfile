@@ -30,7 +30,7 @@ RUN mix do certs.dev, release
 RUN tar -czf mongoose_push.tar.gz -C _build/prod/rel/mongoose_push .
 
 
-FROM phusion/baseimage
+FROM phusion/baseimage:jammy-1.0.1
 
 # set locales
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y locales

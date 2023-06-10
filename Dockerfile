@@ -30,10 +30,10 @@ RUN mix do certs.dev, release
 RUN tar -czf mongoose_push.tar.gz -C _build/prod/rel/mongoose_push .
 
 
-FROM phusion/baseimage:jammy-1.0.1
+FROM ubuntu:mantic-20230520
 
 # set locales
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y locales
+RUN apt-get update && apt-get install --no-install-recommends -y locales
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
     dpkg-reconfigure --frontend=noninteractive locales && \
     update-locale LANG=en_US.UTF-8
